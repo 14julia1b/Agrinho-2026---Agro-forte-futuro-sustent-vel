@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agrinho 2026 - Agro forte, futuro sustentável</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #dff5d8, #ffffff);
+      color:#234;
+      overflow-x:hidden;
+    }
+
+    header{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1400&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:20px;
+    }
+
+    .hero{
+      animation: aparecer 2s ease;
+    }
+
+    .hero h1{
+      font-size:3rem;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.3rem;
+      max-width:700px;
+      margin:auto;
+    }
+
+    @keyframes aparecer{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    section{
+      padding:70px 10%;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:white;
+      border-radius:15px;
+      padding:25px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      background:#e8ffe1;
+    }
+
+    .card h3{
+      color:#2f7a2f;
+      margin-bottom:15px;
+    }
+
+    .contador{
+      background:#2f7a2f;
+      color:white;
+      text-align:center;
+      border-radius:20px;
+      padding:50px 20px;
+    }
+
+    .contador h2{
+      margin-bottom:20px;
+      font-size:2rem;
+    }
+
+    .numero{
+      font-size:4rem;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 30px;
+      background:#4caf50;
+      color:white;
+      text-decoration:none;
+      border-radius:30px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#2e7d32;
+      transform:scale(1.05);
+    }
+
+    footer{
+      background:#1d3d1d;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    .folha{
+      position:fixed;
+      top:-50px;
+      color:green;
+      font-size:25px;
+      animation: cair linear forwards;
+      z-index:999;
+    }
+
+    @keyframes cair{
+      to{
+        transform:translateY(110vh) rotate(360deg);
+      }
+    }
+
+    @media(max-width:768px){
+      .hero h1{
+        font-size:2rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hero">
+      <h1>🌱 Agro forte, futuro sustentável 🌎</h1>
+      <p>
+        Produzir alimentos e preservar a natureza podem caminhar juntos.
+        O futuro depende do equilíbrio entre agricultura, tecnologia e meio ambiente.
+      </p>
+
+      <a href="#info" class="btn">Explorar Projeto</a>
+    </div>
+  </header>
+
+  <section id="info">
+    <h2 style="text-align:center; font-size:2.5rem; color:#2f7a2f;">
+      Sustentabilidade no Campo
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>🌿 Preservação Ambiental</h3>
+        <p>
+          O cuidado com rios, florestas e solos garante recursos naturais para as futuras gerações.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🚜 Tecnologia no Agro</h3>
+        <p>
+          Máquinas modernas e agricultura inteligente aumentam a produção com menos impacto ambiental.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💧 Uso Consciente da Água</h3>
+        <p>
+          Sistemas de irrigação eficientes ajudam a economizar água e melhorar a produtividade.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🌎 Futuro Sustentável</h3>
+        <p>
+          O equilíbrio entre produção agrícola e natureza fortalece a economia e protege o planeta.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="contador">
+      <h2>Árvores preservadas pelo Agro Sustentável</h2>
+      <div class="numero" id="contador">0</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>
+      Projeto desenvolvido para o Concurso Agrinho 2026 🌱
+    </p>
+  </footer>
+
+  <script>
+    // CONTADOR ANIMADO
+
+    let contador = document.getElementById("contador");
+    let numero = 0;
+
+    let intervalo = setInterval(() => {
+
+      numero += 5;
+      contador.innerHTML = numero;
+
+      if(numero >= 1000){
+        clearInterval(intervalo);
+      }
+
+    }, 20);
+
+
+    // ANIMAÇÃO DE FOLHAS CAINDO
+
+    function criarFolha(){
+
+      const folha = document.createElement("div");
+
+      folha.classList.add("folha");
+
+      folha.innerHTML = "🍃";
+
+      folha.style.left = Math.random() * window.innerWidth + "px";
+
+      folha.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+      document.body.appendChild(folha);
+
+      setTimeout(() => {
+        folha.remove();
+      }, 5000);
+
+    }
+
+    setInterval(criarFolha, 300);
+
+  </script>
+
+</body>
+</html>
